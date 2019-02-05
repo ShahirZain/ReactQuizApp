@@ -3,7 +3,7 @@ import TestToBeGiven from './TestToBeGiven';
 import history from './history';
 import './login.css'
 
-class App extends Component {
+class Login extends Component {
 
     state={
         tempUserName : "",
@@ -53,4 +53,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Login;

@@ -29,11 +29,7 @@ class TestToBeGiven extends React.Component {
         {topic:"HTML" ,
         route:"/html" },
         {topic:"CSS",
-        route:"/css"},       
-        {topic:"JAVASCRIPT",
-        route:"/javascript"},
-        {topic:"REACT",
-        route:"/react"},
+        route:"/css"}
       ]
   }
   toggleHidden = () => {
