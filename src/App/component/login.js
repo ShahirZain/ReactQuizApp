@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import TestToBeGiven from './TestToBeGiven'
+import TestToBeGiven from './TestToBeGiven';
+import history from './history';
 import './login.css'
 
 class App extends Component {
@@ -30,6 +31,7 @@ class App extends Component {
                if(this.state.UserName === "shahir" && this.state.UserPassword === "zain" ){
             }
            })
+           history.push('/TestToBeGiven')
     }
 
 
