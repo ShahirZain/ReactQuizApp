@@ -45,7 +45,7 @@ class TestToBeGiven extends React.Component {
       <div className="testToBeGiven">
         <BrowserRouter>
         <div>
-          <NavLink to="/" onClick={this.toggleHidden} className="JS"> JavaScript</NavLink>  <br/>
+          <NavLink to="/TestToBeGiven" onClick={this.toggleHidden} className="JS"> JavaScript</NavLink>  <br/>
           {!this.state.flag && <Child val={Topic} className="child"/>}
           <NavLink to="/" className="RC"> React</NavLink> 
           </div>

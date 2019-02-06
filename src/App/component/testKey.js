@@ -1,7 +1,9 @@
 import React ,{Component} from 'react';
 import {BrowserRouter,NavLink,Switch,Route} from 'react-router-dom';
-import TestQues from './testQuesJS1'
+import TestQuesJS1 from './testQuesJS1'
+import './testKey.css'
 import history from './history'
+
 
 class testKey extends Component {
     state={
@@ -21,29 +23,32 @@ class testKey extends Component {
             key : this.state.temp   
         }, () =>{
             console.log(this.state.key)
-            if(this.state.key === "abc"){
+            this.state.key === "abc" ?
                     this.setState(
                         {
-                            flag : !this.state.flag
+                            flag : true
+                        }
+                    ) :  this.setState(
+                        {
+                            flag : false
                         }
                     )
-            }
+         
         } )
     }    
     render() {
       return (
-        <div>
-            <input type="text" name="Key" onChange={this.temp} value={this.state.temp}/>  
+        <div className="box"> 
+            <p>Key</p> 
+            <input type="text" name="Key" onChange={this.temp} className="txt" value={this.state.temp}/>  
             <BrowserRouter>
                 <span>
-                    <NavLink to=""><input type="button" value="Submit" onClick={(e)=>this.submit(e)}/></NavLink>                    
+                    <NavLink to="/TestToBeGiven/TestKey/TestQuesJS1"><input type="button" className="Button" value="Submit" onClick={this.submit}/></NavLink>                    
                 </span>
             </BrowserRouter>
             {
                 this.state.flag ? 
-                    <Switch>
-                        <Route exact path="" component={TestQues}/>
-                    </Switch>
+                         history.push("/TestToBeGiven/TestKey/TestQuesJS1")
                     : null
             }
         </div>
