@@ -1,6 +1,6 @@
 import React ,{Component} from 'react';
 import {BrowserRouter,NavLink,Switch,Route} from 'react-router-dom';
-import TestQues from './testQues'
+import TestQues from './testQuesJS1'
 import history from './history'
 
 class testKey extends Component {
@@ -29,7 +29,6 @@ class testKey extends Component {
                     )
             }
         } )
-        history.push("/new")
     }    
     render() {
       return (
@@ -37,13 +36,13 @@ class testKey extends Component {
             <input type="text" name="Key" onChange={this.temp} value={this.state.temp}/>  
             <BrowserRouter>
                 <span>
-                    <NavLink to="/new"><input type="button" value="Submit" onClick={(e)=>this.submit(e)}/></NavLink>                    
+                    <NavLink to=""><input type="button" value="Submit" onClick={(e)=>this.submit(e)}/></NavLink>                    
                 </span>
             </BrowserRouter>
             {
                 this.state.flag ? 
                     <Switch>
-                        <Route exact path="/new" component={TestQues}/>
+                        <Route exact path="" component={TestQues}/>
                     </Switch>
                     : null
             }

@@ -1,5 +1,7 @@
 import React from 'react';
 import {BrowserRouter,NavLink} from 'react-router-dom'
+import './TestToBeGiven.css'
+import history from './history'
 
 
 
@@ -8,10 +10,10 @@ const Child = (props) => (
   <div className='modal'>
     <ul>
        {
-        props.val.map(({topic , route}) => <li key={route}> 
+        props.val.map(({topic , route}) => <li className="list" key={route}> 
             <BrowserRouter>
               <div>
-                <NavLink to={route}>{topic}</NavLink>
+                <NavLink to={route} className="data" onClick={()=>history.push("/TestToBeGiven/TestKey")}>{topic}</NavLink>
               </div>
             </BrowserRouter>
           </li>)
@@ -26,10 +28,10 @@ class TestToBeGiven extends React.Component {
   state={
     flag: true,
     quiztopic:[
-        {topic:"HTML" ,
-        route:"/html" },
-        {topic:"CSS",
-        route:"/css"}
+        {topic:"JS test 1" ,
+        route:"/TestToBeGiven/TestKey" },
+        {topic:"JS test 2",
+        route:"/TestToBeGiven/TestKey"}
       ]
   }
   toggleHidden = () => {
@@ -40,12 +42,12 @@ class TestToBeGiven extends React.Component {
   render() {
     const Topic = this.state.quiztopic;
     return (    
-      <div>
+      <div className="testToBeGiven">
         <BrowserRouter>
         <div>
-          <NavLink to="/" onClick={this.toggleHidden}> JavaScript</NavLink> <br/>
-          {!this.state.flag && <Child val={Topic}/>}
-          <NavLink to="/"> react</NavLink>
+          <NavLink to="/" onClick={this.toggleHidden} className="JS"> JavaScript</NavLink>  <br/>
+          {!this.state.flag && <Child val={Topic} className="child"/>}
+          <NavLink to="/" className="RC"> React</NavLink> 
           </div>
         </BrowserRouter>
       </div>
