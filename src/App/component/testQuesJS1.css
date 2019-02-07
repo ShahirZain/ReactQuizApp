@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.header{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    padding: 20px;
+    background-color: rgb(134, 113, 113);
+}
+header{
+    display: block; 
+}
+form{
+   font-size: 19px;
+   margin: 40px;
+   font-family: 'Noto Serif SC', serif;   
+}
+.opt{   
+    margin: 10px;
+}
+.text {
+    margin-bottom: 10px;
+}
